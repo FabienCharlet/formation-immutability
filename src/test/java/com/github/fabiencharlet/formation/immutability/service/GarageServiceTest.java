@@ -1,7 +1,5 @@
 package com.github.fabiencharlet.formation.immutability.service;
 
-import java.util.List;
-
 import org.junit.Test;
 
 import com.github.fabiencharlet.formation.immutability.db.FakeDB;
@@ -21,27 +19,12 @@ public class GarageServiceTest {
 
 		GarageService service = new GarageService(voituresRepo, DataGenerator.stockRoues());
 
-		List<Roue> rouesChangees = service.changeRoueCreveeSurVoiture(voiture.getId());
-
-
-		for (Roue roue : voiture.getRoues()) {
-
-			if (roue.getEtat() == Etat.CREVEE)
-				System.out.println(roue.getPosition());
-		}
-
+		service.changeRoueCreveeSurVoiture(voiture.getId());
 
 		Truth.assertThat(voiture.getRoues().stream()
 				.map(Roue::getEtat)
-				.filter(e -> e == Etat.BON)
+				.filter(e -> e == Etat.BONNE)
 				.count()).isEqualTo(5);
-
-		Truth.assertThat(rouesChangees).hasSize(2);
-
-		for (Roue roue : rouesChangees) {
-
-			System.out.println(roue.getPosition());
-		}
 	}
 
 

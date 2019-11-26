@@ -6,7 +6,7 @@ public class Roue implements Cloneable {
 
 	public enum Etat {
 
-		BON,
+		BONNE,
 		CREVEE
 	}
 
@@ -24,7 +24,7 @@ public class Roue implements Cloneable {
 		Roue res = new Roue();
 
 		res.setId(UUID.randomUUID().toString());
-		res.setEtat(Etat.BON);
+		res.setEtat(Etat.BONNE);
 		res.setKilometres(0);
 		res.setPosition(position);
 
