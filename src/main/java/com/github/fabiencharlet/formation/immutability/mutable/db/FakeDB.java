@@ -1,4 +1,4 @@
-package com.github.fabiencharlet.formation.immutability.db;
+package com.github.fabiencharlet.formation.immutability.mutable.db;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

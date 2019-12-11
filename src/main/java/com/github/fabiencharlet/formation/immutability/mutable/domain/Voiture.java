@@ -1,10 +1,10 @@
-package com.github.fabiencharlet.formation.immutability.domain;
+package com.github.fabiencharlet.formation.immutability.mutable.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.github.fabiencharlet.formation.immutability.domain.Roue.Position;
+import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Position;
 
 public class Voiture implements Cloneable {
 

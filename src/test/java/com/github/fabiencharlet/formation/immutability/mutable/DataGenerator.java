@@ -1,13 +1,13 @@
-package com.github.fabiencharlet.formation.immutability.util;
+package com.github.fabiencharlet.formation.immutability.mutable;
 
 import java.util.Arrays;
 import java.util.List;
 
-import com.github.fabiencharlet.formation.immutability.db.FakeDB;
-import com.github.fabiencharlet.formation.immutability.domain.Roue;
-import com.github.fabiencharlet.formation.immutability.domain.Roue.Etat;
-import com.github.fabiencharlet.formation.immutability.domain.Roue.Position;
-import com.github.fabiencharlet.formation.immutability.domain.Voiture;
+import com.github.fabiencharlet.formation.immutability.mutable.db.FakeDB;
+import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue;
+import com.github.fabiencharlet.formation.immutability.mutable.domain.Voiture;
+import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Etat;
+import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Position;
 
 public class DataGenerator {
 

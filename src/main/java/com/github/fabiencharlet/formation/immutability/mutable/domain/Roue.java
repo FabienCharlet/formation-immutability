@@ -1,4 +1,4 @@
-package com.github.fabiencharlet.formation.immutability.domain;
+package com.github.fabiencharlet.formation.immutability.mutable.domain;
 
 import java.util.UUID;
 
