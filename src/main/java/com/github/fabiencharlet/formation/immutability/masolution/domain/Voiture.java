@@ -1,12 +1,12 @@
-package com.github.fabiencharlet.formation.immutability.immutable.domain;
+package com.github.fabiencharlet.formation.immutability.masolution.domain;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import com.github.fabiencharlet.formation.immutability.immutable.util.Validators;
+import com.github.fabiencharlet.formation.immutability.masolution.util.Validators;
 
-public class Voiture {
+public final class Voiture {
 
 	public static Voiture nouvelle() {
 
@@ -82,10 +82,31 @@ public class Voiture {
 
 	public Voiture applique(ChangementRoue changement) {
 
-		return change(changement.ancienneRoue, changement.ancienneRoue);
+		return change(changement.ancienneRoue, changement.nouvelleRoue);
+	}
+
+	public String printEtatRoues() {
+
+		String res = "Roues : ";
+
+		for (Position position : Position.values()) {
+
+			Roue roue = roueAt(position);
+			res += "\n - " + position + " : " + roue.etat + ", id : " + roue.id + ", kms : " + roue.kilometrage ;
+		}
+
+		return res;
 	}
 
 	public Voiture change(Roue roueARemplacer, Roue nouvelleRoue) {
+
+		Validators.checkNotNull(roueARemplacer);
+		Validators.checkNotNull(nouvelleRoue);
+
+		if (roueARemplacer.equals(nouvelleRoue)) {
+			throw new RuntimeException("On ne remplace pas une roue par elle même");
+		}
+
 
 		if (roueARemplacer.isCrevee() && nouvelleRoue.isCrevee()) {
 			throw new RuntimeException("On ne remplace pas une roue crevée par une autre roue crevée");

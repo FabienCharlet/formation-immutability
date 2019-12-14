@@ -5,7 +5,7 @@ import org.junit.Test;
 import com.github.fabiencharlet.formation.immutability.mutable.db.FakeDB;
 import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue;
 import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Etat;
-import com.github.fabiencharlet.formation.immutability.mutable.service.GarageService;
+import com.github.fabiencharlet.formation.immutability.mutable.service.GarageMutableService;
 import com.github.fabiencharlet.formation.immutability.mutable.domain.Voiture;
 import com.google.common.truth.Truth;
 
@@ -17,7 +17,7 @@ public class GarageServiceTest {
 		FakeDB<Voiture> voituresRepo = DataGenerator.voitureRoueCrevee();
 		Voiture voiture = voituresRepo.select(voituresRepo.firstId());
 
-		GarageService service = new GarageService(voituresRepo, DataGenerator.stockRoues());
+		GarageMutableService service = new GarageMutableService(voituresRepo, DataGenerator.stockRoues());
 
 		service.changeRoueCreveeEtAdjacenteSurVoiture(voiture.getId());
 
@@ -33,7 +33,7 @@ public class GarageServiceTest {
 		FakeDB<Voiture> voituresRepo = DataGenerator.voitureRoueCrevee();
 		Voiture voiture = voituresRepo.select(voituresRepo.firstId());
 
-		GarageService service = new GarageService(voituresRepo, DataGenerator.stockRoues());
+		GarageMutableService service = new GarageMutableService(voituresRepo, DataGenerator.stockRoues());
 
 		service.changeRoueCreveeEtAdjacenteEnParalleleSurVoiture(voiture.getId());
 

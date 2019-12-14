@@ -9,12 +9,12 @@ import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Etat;
 import com.github.fabiencharlet.formation.immutability.mutable.domain.Roue.Position;
 import com.github.fabiencharlet.formation.immutability.mutable.domain.Voiture;
 
-public class GarageService {
+public class GarageMutableService {
 
 	private FakeDB<Voiture> voitureRepository;
 	private FakeDB<Roue> stockRouesRepository;
 
-	public GarageService(FakeDB<Voiture> voitureRepository, FakeDB<Roue> stockRouesRepository) {
+	public GarageMutableService(FakeDB<Voiture> voitureRepository, FakeDB<Roue> stockRouesRepository) {
 
 		this.voitureRepository = voitureRepository;
 		this.stockRouesRepository = stockRouesRepository;

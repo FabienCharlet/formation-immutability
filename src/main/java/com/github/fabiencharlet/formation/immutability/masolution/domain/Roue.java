@@ -1,10 +1,10 @@
-package com.github.fabiencharlet.formation.immutability.immutable.domain;
+package com.github.fabiencharlet.formation.immutability.masolution.domain;
 
 import java.util.UUID;
 
-import com.github.fabiencharlet.formation.immutability.immutable.util.Validators;
+import com.github.fabiencharlet.formation.immutability.masolution.util.Validators;
 
-public class Roue {
+public final class Roue {
 
 	public enum Etat {
 
@@ -18,24 +18,24 @@ public class Roue {
 	}
 
 	public final String id;
-	public final int kilometres;
+	public final int kilometrage;
 	public final Etat etat;
 
 	private Roue(String id, int kilometres, Etat etat) {
 
-		this.id = Validators.checkNotNull(id, "id");
-		this.kilometres = kilometres;
-		this.etat = Validators.checkNotNull(etat, "etat");
+		this.id = Validators.checkNotNull(id);
+		this.kilometrage = kilometres;
+		this.etat = Validators.checkNotNull(etat);
 	}
 
 	public Roue crevee() {
 
-		return new Roue(id, kilometres, Etat.CREVEE);
+		return new Roue(id, kilometrage, Etat.CREVEE);
 	}
 
-	public Roue kilometresParcourues(int km) {
+	public Roue kilometresParcourus(int km) {
 
-		return new Roue(id, kilometres + km, etat);
+		return new Roue(id, kilometrage + km, etat);
 	}
 
 	public Etat getEtat() {
@@ -53,7 +53,7 @@ public class Roue {
 		int result = 1;
 		result = prime * result + ((etat == null) ? 0 : etat.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + kilometres;
+		result = prime * result + kilometrage;
 		return result;
 	}
 
@@ -73,7 +73,7 @@ public class Roue {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (kilometres != other.kilometres)
+		if (kilometrage != other.kilometrage)
 			return false;
 		return true;
 	}

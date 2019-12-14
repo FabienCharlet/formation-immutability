@@ -1,6 +1,6 @@
-package com.github.fabiencharlet.formation.immutability.immutable.domain;
+package com.github.fabiencharlet.formation.immutability.masolution.domain;
 
-import com.github.fabiencharlet.formation.immutability.immutable.util.Validators;
+import com.github.fabiencharlet.formation.immutability.masolution.util.Validators;
 
 public class ChangementRoue {
 

@@ -1,17 +1,17 @@
-package com.github.fabiencharlet.formation.immutability.immutable.service;
+package com.github.fabiencharlet.formation.immutability.masolution.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.github.fabiencharlet.formation.immutability.immutable.domain.ChangementRoue;
-import com.github.fabiencharlet.formation.immutability.immutable.domain.Position;
-import com.github.fabiencharlet.formation.immutability.immutable.domain.ReparationCrevaison;
-import com.github.fabiencharlet.formation.immutability.immutable.domain.Roue;
-import com.github.fabiencharlet.formation.immutability.immutable.domain.Voiture;
+import com.github.fabiencharlet.formation.immutability.masolution.domain.ChangementRoue;
+import com.github.fabiencharlet.formation.immutability.masolution.domain.Position;
+import com.github.fabiencharlet.formation.immutability.masolution.domain.ReparationCrevaison;
+import com.github.fabiencharlet.formation.immutability.masolution.domain.Roue;
+import com.github.fabiencharlet.formation.immutability.masolution.domain.Voiture;
 
-public class GarageService {
+public class GarageImmutalbeService {
 
 	public ReparationCrevaison changeRoueCreveeEtAdjacenteEnParalleleSurVoiture(
 			Voiture voiture,
@@ -74,8 +74,10 @@ public class GarageService {
 
 	public List<ChangementRoue> changeRoueCrevee(Voiture voiture, Position positionRoueCrevee, Roue nouvelleRoue) {
 
+		Roue ancienneRoueSecours = voiture.roueAt(positionRoueCrevee);
+
 		return Arrays.asList(
-				new ChangementRoue(voiture.roueSecours, voiture.roueAt(positionRoueCrevee)),
-				new ChangementRoue(voiture.roueAt(positionRoueCrevee), nouvelleRoue));
+				new ChangementRoue(voiture.roueAt(positionRoueCrevee), nouvelleRoue),
+				new ChangementRoue(voiture.roueSecours, ancienneRoueSecours));
 	}
 }

@@ -1,4 +1,4 @@
-package com.github.fabiencharlet.formation.immutability.immutable.util;
+package com.github.fabiencharlet.formation.immutability.masolution.util;
 
 public class Validators {
 

@@ -1,4 +1,4 @@
-package com.github.fabiencharlet.formation.immutability.immutable.domain;
+package com.github.fabiencharlet.formation.immutability.masolution.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class ReparationCrevaison {
 
 			voitureTemp = voitureTemp.applique(changementRoue);
 
-			if ( voitureTemp.rouesAsList().contains(changementRoue.ancienneRoue) ) {
+			if ( changementRoue.nouvelleRoue.kilometrage == 0 ) {
 
 				rouesARecycler.add(changementRoue.ancienneRoue);
 			}

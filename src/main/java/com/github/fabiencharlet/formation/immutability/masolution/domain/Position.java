@@ -1,4 +1,4 @@
-package com.github.fabiencharlet.formation.immutability.immutable.domain;
+package com.github.fabiencharlet.formation.immutability.masolution.domain;
 
 public enum Position {
 
